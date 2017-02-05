@@ -17,19 +17,19 @@ def text_file_to_vec(filePath, allWords, textFileNames, zipWords):
                         if word==allWords[0] or word==allWords[2] or word==allWords[3] or word==allWords[4]:
                             index = allWords.index(word)
 
-                            headers={'content-type':'application/json','Accept':'application/json'}
+                            
     
                             feat= {'attributes' : {"OBJECTID" : 60, "FID" : 60, "zipcode" : 90210, word : 1}}
        
                             payload = {'f': 'json'}
     
-                            url = 'http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0'
+                            url = 'http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0?f=json'
     
                             print(json.dumps(payload))
         
-                            r = requests.post(url, data=json.dumps(payload), headers=headers)
+                            r = requests.get(url)
         
-                            print(r.status_code)  
+                            print(r.json())  
                              
     return None
 
