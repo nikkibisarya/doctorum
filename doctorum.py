@@ -14,7 +14,7 @@ def text_file_to_vec(filePath, allWords, textFileNames, zipWords):
 
                 for line in file:
                     for word in line.split():
-                        if word==allWords[0] or word==allWords[2] or word==allWords[3] or word==allWords[4]:
+                        if word==allWords[0] or word==allWords[1] or word==allWords[2] or word==allWords[3] or word==allWords[4]:
                             index = allWords.index(word)
 
                             
@@ -23,7 +23,7 @@ def text_file_to_vec(filePath, allWords, textFileNames, zipWords):
        
                             payload = {'f': 'json'}
     
-                            url = 'http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0?f=json'
+                            url = 'http://services1.arcgis.com/uRIm5IkWjDXybgFb/arcgis/rest/services/LA_Nhood_Change/FeatureServer/0?f=json'
     
                             print(json.dumps(payload))
         
